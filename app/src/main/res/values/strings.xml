@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="error_message">Please enter valid fields</string>
+    <string name="welcome_to_weather_app">Welcome to weather App</string>
+    <string name="enter_latitude">Enter latitude</string>
+    <string name="enter_the_longitude">Enter the longitude</string>
+    <string name="submit">Submit</string>
+    <string name="error_occurred">Error occurred</string>
+    <string name="no_data_found">No data found</string>
+    <string name="time">Time</string>
+    <string name="temperature">Temperature</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind">Wind</string>
+    <string name="please_enter_valid_data">Please try valid values</string>
+    <string name="please_try_again_message">Check your internet connection please try again</string>
+
+</resources>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/weatherTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large_value"
+        android:gravity="center"
+        android:text="@string/welcome_to_weather_app"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/latitudeInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin"
+        android:background="@drawable/input_background"
+        android:hint="@string/enter_latitude"
+        android:inputType="numberDecimal"
+        android:padding="@dimen/padding"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weatherTv" />
+
+    <EditText
+        android:id="@+id/longitudeInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin"
+        android:background="@drawable/input_background"
+        android:hint="@string/enter_the_longitude"
+        android:inputType="numberDecimal"
+        android:padding="@dimen/padding"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/latitudeInput" />
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin"
+        android:background="@drawable/button_background"
+        android:text="@string/submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/longitudeInput" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/submitBtn"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/errorTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="@dimen/small_text_size"
+        android:visibility="gone"
+        android:textColor="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressbar" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin"
+        android:visibility="gone"
+        app:cardCornerRadius="@dimen/corner_radius"
+        app:cardElevation="@dimen/card_elevation"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/errorTv">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/timeResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/result_margin"
+                android:drawableLeft="@drawable/ic_baseline_access_time_24"
+                android:drawablePadding="@dimen/padding"
+                android:textSize="@dimen/result_text_size"
+                tools:text="@string/time" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/temperatureResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/result_margin"
+                android:drawableLeft="@drawable/ic_baseline_wb_sunny_24"
+                android:drawablePadding="@dimen/padding"
+                android:textSize="@dimen/result_text_size"
+                tools:text="@string/temperature" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/humidityResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/result_margin"
+                android:drawableLeft="@drawable/ic_baseline_cloud_24"
+                android:drawablePadding="@dimen/padding"
+                android:textSize="@dimen/result_text_size"
+                tools:text="@string/humidity" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/windResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/result_margin"
+                android:drawableLeft="@drawable/ic_baseline_speed_24"
+                android:drawablePadding="@dimen/padding"
+                android:textSize="@dimen/result_text_size"
+                tools:text="@string/wind" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
